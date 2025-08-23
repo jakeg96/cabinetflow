@@ -34,7 +34,7 @@
           </DropdownMenu>
         </div>
       </header>
-      <div class="mx-4 mt-4">
+      <div class="mt-4">
         <WeeklyView />
       </div>
     </main>
