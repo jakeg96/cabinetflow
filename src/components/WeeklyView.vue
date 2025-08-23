@@ -5,7 +5,7 @@
       <div class="flex flex-col gap-2 w-full">
         <div class="flex gap-3 mt-2">
           <p class="text-2xl font-bold italic">Monday</p>
-          <p class="text-2xl italic">25</p>
+          <p class="text-2xl italic font-light">25</p>
         </div>
         <JobCard />
         <JobCard />
@@ -14,7 +14,7 @@
       <div class="flex flex-col gap-2 w-full">
         <div class="flex gap-3 mt-2">
           <p class="text-2xl font-bold italic">Tuesday</p>
-          <p class="text-2xl italic">26</p>
+          <p class="text-2xl italic font-light">26</p>
         </div>
         <JobCard />
         <JobCard />
@@ -24,14 +24,14 @@
       <div class="flex flex-col gap-2 w-full">
         <div class="flex gap-3 mt-2">
           <p class="text-2xl font-bold italic">Wednesday</p>
-          <p class="text-2xl italic">27</p>
+          <p class="text-2xl italic font-light">27</p>
         </div>
         <JobCard />
       </div>
       <div class="flex flex-col gap-2 w-full">
         <div class="flex gap-3 mt-2">
           <p class="text-2xl font-bold italic">Thursday</p>
-          <p class="text-2xl italic">28</p>
+          <p class="text-2xl italic font-light">28</p>
         </div>
         <JobCard />
         <JobCard />
@@ -39,7 +39,7 @@
       <div class="flex flex-col gap-2 w-full">
         <div class="flex gap-3 mt-2">
           <p class="text-2xl font-bold italic">Friday</p>
-          <p class="text-2xl italic">29</p>
+          <p class="text-2xl italic font-light">29</p>
         </div>
         <JobCard />
         <JobCard />

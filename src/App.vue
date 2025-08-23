@@ -5,7 +5,7 @@
       <header class="flex justify-between items-center py-3 sticky top-0 border-b bg-background">
         <div class="flex gap-1 justify-center items-center">
           <SidebarTrigger class="mr-1" />
-          <Icon icon="heroicons:cube-transparent" class="size-7 hidden md:block " />
+          <Icon icon="heroicons:cube-transparent" class="size-7 hidden xs:block " />
           <p class="font-bold italic">CabinetFlow</p>
         </div>
         <div class="flex gap-2">
@@ -34,7 +34,7 @@
           </DropdownMenu>
         </div>
       </header>
-      <div class="mt-4">
+      <div class="sm:mx-6 mt-4">
         <WeeklyView />
       </div>
     </main>
