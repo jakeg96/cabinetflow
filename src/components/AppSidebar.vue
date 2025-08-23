@@ -14,12 +14,12 @@ import {
 // Menu items.
 const items = [
   {
-    title: 'Weekly View',
+    title: 'Week',
     url: '#',
     icon: Home,
   },
   {
-    title: 'Monthly View',
+    title: 'Month',
     url: '#',
     icon: Calendar,
   },

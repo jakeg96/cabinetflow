@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="text-3xl font-bold italic">Weekly View</p>
+    <p class="text-3xl font-bold italic">Week</p>
     <div class="flex flex-col lg:flex-row gap-3 mt-1">
       <div class="flex flex-col gap-2 w-full">
         <div class="flex gap-3 mt-2">
