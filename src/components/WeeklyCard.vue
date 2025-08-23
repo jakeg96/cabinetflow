@@ -7,24 +7,24 @@
     <p>134 Marathon Dr, Tamworth</p>
     <div class="flex gap-1 mt-2">
       <div class="flex flex-col justify-center items-center w-1/5">
-        <p class="font-bold text-sm italic text-zinc-400">READY</p>
-        <Icon icon="material-symbols:check-circle" class="size-7 text-zinc-300" />
+        <p class="font-bold text-xs italic text-green-600">READY</p>
+        <Icon icon="material-symbols:check-circle" class="size-6 text-green-600" />
       </div>
       <div class="flex flex-col justify-center items-center w-1/5">
-        <p class="font-bold text-sm italic text-zinc-400">CUT</p>
-        <Icon icon="material-symbols:check-circle" class="size-7 text-zinc-300" />
+        <p class="font-bold text-xs italic text-green-600">CUT</p>
+        <Icon icon="material-symbols:check-circle" class="size-6 text-green-600" />
       </div>
       <div class="flex flex-col justify-center items-center w-1/5">
-        <p class="font-bold text-sm italic text-zinc-400">EDGED</p>
-        <Icon icon="material-symbols:circle-outline" class="size-7 text-zinc-300" />
+        <p class="font-bold text-xs italic text-zinc-400">EDGED</p>
+        <Icon icon="material-symbols:circle-outline" class="size-6 text-zinc-300" />
       </div>
       <div class="flex flex-col justify-center items-center w-1/5">
-        <p class="font-bold text-sm italic text-zinc-400">BUILT</p>
-        <Icon icon="material-symbols:circle-outline" class="size-7 text-zinc-300" />
+        <p class="font-bold text-xs italic text-zinc-400">BUILT</p>
+        <Icon icon="material-symbols:circle-outline" class="size-6 text-zinc-300" />
       </div>
       <div class="flex flex-col justify-center items-center w-1/5">
-        <p class="font-bold text-sm italic text-zinc-400">DONE</p>
-        <Icon icon="material-symbols:circle-outline" class="size-7 text-zinc-300" />
+        <p class="font-bold text-xs italic text-zinc-400">DONE</p>
+        <Icon icon="material-symbols:circle-outline" class="size-6 text-zinc-300" />
       </div>
     </div>
   </div>
