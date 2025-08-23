@@ -5,7 +5,6 @@ import {
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -45,11 +44,11 @@ const items = [
   <Sidebar>
     <SidebarContent>
       <SidebarGroup>
-        <SidebarGroupLabel>Menu</SidebarGroupLabel>
+        <!-- <SidebarGroupLabel class="text-sm font-bold">Menu</SidebarGroupLabel> -->
         <SidebarGroupContent>
-          <SidebarMenu>
+          <SidebarMenu class="mt-4">
             <SidebarMenuItem v-for="item in items" :key="item.title">
-              <SidebarMenuButton asChild>
+              <SidebarMenuButton asChild class="text-lg italic">
                 <a :href="item.url">
                   <component :is="item.icon" />
                   <span>{{ item.title }}</span>
