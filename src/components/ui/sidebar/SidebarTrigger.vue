@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { HTMLAttributes } from 'vue'
-import { PanelLeft } from 'lucide-vue-next'
+import { Icon } from '@iconify/vue'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { useSidebar } from './utils'
@@ -18,10 +18,10 @@ const { toggleSidebar } = useSidebar()
     data-slot="sidebar-trigger"
     variant="ghost"
     size="icon"
-    :class="cn('h-12 w-12', props.class)"
+    :class="cn('h-8 w-8', props.class)"
     @click="toggleSidebar"
   >
-    <PanelLeft />
+    <Icon icon="radix-icons:hamburger-menu" class="size-5"/>
     <span class="sr-only">Toggle Sidebar</span>
   </Button>
 </template>

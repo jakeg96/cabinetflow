@@ -4,9 +4,9 @@
     <main class="flex-1 flex-col mx-4">
       <header class="flex justify-between items-center py-3 sticky top-0 border-b bg-background">
         <div class="flex gap-1 justify-center items-center">
-          <SidebarTrigger />
-          <Icon icon="heroicons:cube-transparent" class="size-7" />
-          <p class="hidden md:block font-bold italic">CabinetFlow</p>
+          <SidebarTrigger class="mr-1" />
+          <Icon icon="heroicons:cube-transparent" class="size-7 hidden md:block " />
+          <p class="font-bold italic">CabinetFlow</p>
         </div>
         <div class="flex gap-2">
           <Button class="hover:"
