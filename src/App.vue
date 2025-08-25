@@ -54,7 +54,6 @@ import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
 
 import AppSidebar from './components/AppSidebar.vue'
 import WeeklyView from './components/WeeklyView.vue'
-
 import AddJobForm from '@/components/AddJobForm.vue'
 
 // import { onMounted } from 'vue'
