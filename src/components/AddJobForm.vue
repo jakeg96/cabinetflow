@@ -10,7 +10,7 @@
     </button>
 
     <!-- Dialog Overlay -->
-    <div v-if="isOpen" class="fixed inset-0 z-50 flex items-start sm:items-center justify-center p-2 sm:p-4 pt-12 sm:pt-4">
+    <div v-if="isOpen" class="fixed inset-0 z-50 flex items-start sm:items-center justify-center p-2 sm:p-4 pt-16 sm:pt-4">
       <!-- Backdrop -->
       <div
         class="fixed inset-0 bg-black/80"
@@ -18,8 +18,8 @@
       />
 
       <!-- Dialog Content -->
-      <div class="relative z-50 w-full max-w-md sm:max-w-lg bg-background border shadow-lg duration-200 rounded-lg max-h-[90vh] overflow-y-auto mx-2 sm:mx-0">
-        <div class="p-4 sm:p-6 pb-3 sm:pb-4">
+      <div class="relative z-50 w-full max-w-[calc(100vw-16px)] sm:max-w-lg bg-background border shadow-lg duration-200 rounded-lg max-h-[90vh] overflow-hidden">
+        <div class="p-4 sm:p-6 pb-4">
           <div class="flex flex-col space-y-1.5 text-center sm:text-left">
             <h2 class="text-lg font-semibold leading-none tracking-tight">Add New Job</h2>
             <p class="text-sm text-muted-foreground">
@@ -28,32 +28,32 @@
           </div>
         </div>
 
-        <div class="px-4 sm:px-6 pb-4 sm:pb-6 space-y-4">
+        <div class="px-4 sm:px-6 pb-4 sm:pb-6 space-y-4 overflow-y-auto">
           <!-- Job Name -->
-          <div class="space-y-2">
+          <div class="space-y-2 w-full">
             <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex items-center gap-2">
-              <FileText class="h-4 w-4 text-foreground" />
+              <FileText class="h-4 w-4 text-foreground flex-shrink-0" />
               Job Name <span class="text-red-500">*</span>
             </label>
             <input
               v-model="formData.job_name"
               type="text"
               required
-              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              class="flex h-10 w-full max-w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-w-0 box-border"
               :class="{ 'border-red-500': formData.job_name.trim() === '' && isSubmitting }"
               placeholder="Enter job name"
             />
           </div>
 
           <!-- State -->
-          <div class="space-y-2">
+          <div class="space-y-2 w-full">
             <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex items-center gap-2">
-              <MapPin class="h-4 w-4 text-foreground" />
+              <MapPin class="h-4 w-4 text-foreground flex-shrink-0" />
               State
             </label>
             <select
               v-model="formData.qldnsw"
-              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              class="flex h-10 w-full max-w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-w-0 box-border"
             >
               <option value="QLD">Queensland</option>
               <option value="NSW">New South Wales</option>
@@ -61,36 +61,36 @@
           </div>
 
           <!-- Install Date -->
-          <div class="space-y-2">
+          <div class="space-y-2 w-full">
             <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex items-center gap-2">
-              <Calendar class="h-4 w-4 text-foreground" />
+              <Calendar class="h-4 w-4 text-foreground flex-shrink-0" />
               Install Date
             </label>
             <input
               v-model="formData.install_date"
               type="date"
-              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              class="flex h-10 w-full max-w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-w-0 box-border"
             />
           </div>
 
           <!-- Draftsman -->
-          <div class="space-y-2">
+          <div class="space-y-2 w-full">
             <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex items-center gap-2">
-              <User class="h-4 w-4 text-foreground" />
+              <User class="h-4 w-4 text-foreground flex-shrink-0" />
               Draftsman <span class="text-red-500">*</span>
             </label>
             <input
               v-model="formData.draftsman"
               type="text"
               required
-              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              class="flex h-10 w-full max-w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-w-0 box-border"
               :class="{ 'border-red-500': formData.draftsman.trim() === '' && isSubmitting }"
               placeholder="Enter draftsman name"
             />
           </div>
 
           <!-- Switches -->
-          <div class="space-y-3">
+          <div class="space-y-3 w-full">
             <!-- Stone by Accent -->
             <div class="flex items-center space-x-2">
               <button
@@ -109,7 +109,7 @@
                 />
               </button>
               <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex items-center gap-2">
-                <Package class="h-4 w-4 text-foreground" />
+                <Package class="h-4 w-4 text-foreground flex-shrink-0" />
                 Stone by Accent
               </label>
             </div>
@@ -132,21 +132,21 @@
                 />
               </button>
               <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex items-center gap-2">
-                <Palette class="h-4 w-4 text-foreground" />
+                <Palette class="h-4 w-4 text-foreground flex-shrink-0" />
                 2Pac
               </label>
             </div>
           </div>
 
           <!-- Notes -->
-          <div class="space-y-2">
+          <div class="space-y-2 w-full">
             <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
               Notes
             </label>
             <textarea
               v-model="formData.notes"
               rows="3"
-              class="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              class="flex min-h-[80px] w-full max-w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-w-0 box-border resize-none"
               placeholder="Add any additional notes..."
             />
           </div>
@@ -156,7 +156,7 @@
             <button
               type="button"
               @click="isOpen = false"
-              class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full sm:w-auto"
+              class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
             >
               Cancel
             </button>
@@ -165,7 +165,7 @@
               @click="handleSubmit"
               :disabled="isSubmitting || !isFormValid"
               :class="[
-                'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full sm:w-auto',
+                'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2',
                 isFormValid ? 'bg-primary text-primary-foreground hover:bg-primary/90' : 'bg-gray-300 text-gray-500 cursor-not-allowed'
               ]"
             >
@@ -181,9 +181,10 @@
 <script setup lang="ts">
 import { ref, reactive, computed } from 'vue'
 import { Plus, Calendar, FileText, User, MapPin, Palette, Package } from 'lucide-vue-next'
+import { supabase } from '@/utils/supabase'
 
 // Import your Supabase client
-import { supabase } from '@/utils/supabase'
+// Already imported above
 
 // Types
 interface JobFormData {
