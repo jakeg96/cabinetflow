@@ -5,13 +5,11 @@
       <header class="flex justify-between items-center py-3 sticky top-0 border-b bg-background">
         <div class="flex gap-1 justify-center items-center">
           <SidebarTrigger class="mr-1" />
-          <Icon icon="heroicons:cube-transparent" class="size-7 hidden xs:block " />
+          <Icon icon="heroicons:cube-transparent" class="size-7 hidden xs:block" />
           <p class="font-bold italic">CabinetFlow</p>
         </div>
         <div class="flex gap-2">
-          <Button class="hover:"
-            ><Icon icon="material-symbols:add-2" class="size-4" />Add Job</Button
-          >
+          <AddJobForm />
           <DropdownMenu>
             <DropdownMenuTrigger as-child>
               <Button variant="outline">
@@ -56,6 +54,9 @@ import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
 
 import AppSidebar from './components/AppSidebar.vue'
 import WeeklyView from './components/WeeklyView.vue'
+
+import AddJobForm from '@/components/AddJobForm.vue'
+
 // import { onMounted } from 'vue'
 // import { supabase } from '../utils/supabase'
 

@@ -21,7 +21,7 @@ const { toggleSidebar } = useSidebar()
     :class="cn('h-8 w-8', props.class)"
     @click="toggleSidebar"
   >
-    <Icon icon="radix-icons:hamburger-menu" class="size-5"/>
+    <Icon icon="radix-icons:hamburger-menu" class="size-5" />
     <span class="sr-only">Toggle Sidebar</span>
   </Button>
 </template>

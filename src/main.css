@@ -127,3 +127,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(var(--calendar-icon-invert, 0));
+}
+
+.dark input[type="date"]::-webkit-calendar-picker-indicator {
+  --calendar-icon-invert: 1;
+}
