@@ -10,7 +10,7 @@
     </button>
 
     <!-- Dialog Overlay -->
-    <div v-if="isOpen" class="fixed inset-0 z-50 flex items-start sm:items-center justify-center p-4 pt-16 sm:pt-4">
+    <div v-if="isOpen" class="fixed inset-0 z-50 flex items-start sm:items-center justify-center p-2 sm:p-4 pt-12 sm:pt-4">
       <!-- Backdrop -->
       <div
         class="fixed inset-0 bg-black/80"
@@ -18,8 +18,8 @@
       />
 
       <!-- Dialog Content -->
-      <div class="relative z-50 w-full max-w-lg bg-background border shadow-lg duration-200 rounded-lg max-h-[90vh] overflow-y-auto">
-        <div class="p-6 pb-4">
+      <div class="relative z-50 w-full max-w-md sm:max-w-lg bg-background border shadow-lg duration-200 rounded-lg max-h-[90vh] overflow-y-auto mx-2 sm:mx-0">
+        <div class="p-4 sm:p-6 pb-3 sm:pb-4">
           <div class="flex flex-col space-y-1.5 text-center sm:text-left">
             <h2 class="text-lg font-semibold leading-none tracking-tight">Add New Job</h2>
             <p class="text-sm text-muted-foreground">
@@ -28,7 +28,7 @@
           </div>
         </div>
 
-        <div class="px-6 pb-6 space-y-4">
+        <div class="px-4 sm:px-6 pb-4 sm:pb-6 space-y-4">
           <!-- Job Name -->
           <div class="space-y-2">
             <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex items-center gap-2">
@@ -156,7 +156,7 @@
             <button
               type="button"
               @click="isOpen = false"
-              class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
+              class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full sm:w-auto"
             >
               Cancel
             </button>
@@ -165,7 +165,7 @@
               @click="handleSubmit"
               :disabled="isSubmitting || !isFormValid"
               :class="[
-                'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2',
+                'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full sm:w-auto',
                 isFormValid ? 'bg-primary text-primary-foreground hover:bg-primary/90' : 'bg-gray-300 text-gray-500 cursor-not-allowed'
               ]"
             >
@@ -182,8 +182,8 @@
 import { ref, reactive, computed } from 'vue'
 import { Plus, Calendar, FileText, User, MapPin, Palette, Package } from 'lucide-vue-next'
 
+// Import your Supabase client
 import { supabase } from '@/utils/supabase'
-
 
 // Types
 interface JobFormData {
@@ -265,7 +265,6 @@ const handleSubmit = async () => {
     isSubmitting.value = false
   }
 }
-
 
 // Optional: Define emits if you want to communicate with parent
 // const emit = defineEmits<{
